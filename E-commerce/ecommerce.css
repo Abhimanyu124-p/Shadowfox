@@ -1,0 +1,278 @@
+/* styles.css */
+html {
+    scroll-behavior: smooth;
+  }
+  
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    transition: background 0.3s ease;
+  }
+  
+  header {
+    background-color: #1692da;
+    color: rgb(77, 238, 250);
+    font-size:1em;
+    font-weight: 900;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  #searchBar {
+    padding: 0.6em;
+    width: 220px;
+    border-radius: 20px;
+    border: none;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  #searchBar:focus {
+    box-shadow: 0 0 5px rgba(20, 112, 193, 0.6);
+    outline: none;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .filters select {
+    padding: 0.5em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+  }
+  
+  .filters select:hover {
+    border-color: #1e88e5;
+  }
+  
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+    padding: 2em;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .product {
+    background: rgba(255, 255, 255, 0.838);
+    color: #ffffff;
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: fit-content;
+    margin:58px 0;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+  
+  .product img {
+    max-width: 100%;
+    min-height:66%;
+    border-radius: 8px;
+    margin-bottom: 0.5em;
+    transition: transform 0.3s ease;
+  }
+  
+  .product:hover img {
+    transform: scale(1.05);
+  }
+  
+  .product h3 {
+    margin: 0.5em 0 0.3em;
+  }
+  
+  .product p {
+    margin: 0.25em 0;
+  }
+  
+  footer {
+    background: #1e88e5;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    padding:1em 2em;;
+    text-align: center;
+  }
+  
+  #checkoutButton {
+    position: relative;
+    background:transparent;
+    overflow: hidden;
+    padding: 1em 2em;
+    display: flex;
+    font-size: 1em;
+    border: none;
+    background-color: white;
+    color: #1e88e5;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  #checkoutButton:hover {
+    z-index:1;
+    color: white;
+  }
+   #checkoutButton::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:0%;
+    height:100%;
+    background-color: #1565c0;
+    z-index:-1;
+    transition:.7s;
+   }
+   #checkoutButton:hover::before{
+    width:100%;
+   }
+  .contact-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: #0056b3;
+  }
+  
+   .hidden {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    overflow: hidden;
+    opacity: 1;
+    max-height: 1000px;
+  }
+ 
+  @keyframes visiblity{
+    from{opacity:0; width:0; height:0;}
+    to{opacity:100%;width:100%;height:100%;}
+   }
+  
+  #contactForm label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  #contactForm input,
+  #contactForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  #contactForm button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #contactForm button[type="submit"]:hover {
+    background-color: #218838;
+  }
+  .product-info h3{
+    color: rgb(255, 106, 6);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+  }
+  .product-info p{
+    color: #000000;
+  }
+   .buy-now{
+    background-color: #007bff;
+    border:none;
+    font-size:.9em;
+    font-weight: 700;
+    color: white;
+    padding:10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px 5px;
+    text-decoration: none;
+   }
+   .add-to-cart{
+    background-color: #28a745;
+    border:none;
+    font-size:.9em;
+    font-weight: 700;
+    color: white;
+    padding:10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px 5px;
+    text-decoration: none;
+   }
+   ion-icon{
+    position: relative;
+    background: transparent;
+    margin: 0%;
+    display:flex;
+    font-size: 2.5em;
+    font-weight: 900;
+    color: #ffffff;
+    border-radius:50%;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.3s ease;
+   }
+    ion-icon:hover{
+      z-index:1;
+      color: #1e88e5;
+    }
+    ion-icon::before{
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: #ffffff;
+      opacity: 1;
+      z-index:-1;
+      transition:.2s;
+    }
+    ion-icon:hover::before{
+       width:100%;
+    }

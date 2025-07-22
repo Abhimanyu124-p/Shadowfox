@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced E-commerce</title>
+  <link rel="stylesheet" href="ecommerce.css">
+</head>
+<body>
+  <header>
+    <h1>ShopEase</h1>
+    <input type="text" id="searchBar" placeholder="Search products...">
+  </header>
+
+  <section class="filters">
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+      <option value="home">Home</option>
+      <option value="footwear">Footwear</option>
+      <option value="smartphone">Smartphone</option>
+      <option value="tv">TV</option>
+      <option value="laptop">Laptop</option>
+      <option value="headphone">Headphone</option>
+    </select>
+
+    <select id="sortOptions">
+      <option value="default">Sort By</option>
+      <option value="priceLowHigh">Price: Low to High</option>
+      <option value="priceHighLow">Price: High to Low</option>
+      <option value="rating">Rating</option>
+    </select>
+    <button id="contactBtn" class="contact-button" onclick="document.getElementById('contactFormWrapper').scrollIntoView({behavior:'smooth'})">Contact Us</button>
+  </section>
+
+  <section id="productList" class="products"></section>
+<!-- Hidden Contact Form -->
+<div id="contactFormWrapper" class="contact-form-wrapper hidden">
+  <form id="contactForm">
+    <h2>Contact Us</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" rows="5" required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+
+  <footer>
+      <button id="checkoutButton">Proceed to Checkout</button>
+      <ion-icon name="arrow-up-circle-outline"></ion-icon>
+  </footer>
+
+  <script src="ecommerce.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
