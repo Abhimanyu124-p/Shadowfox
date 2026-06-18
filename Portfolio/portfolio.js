@@ -1,27 +1,33 @@
 // Contact Form Script
-let sections= document.querySelectorAll('section');
-let navLinks= document.querySelectorAll('header nav ul li a');
- window.onscroll = () => {
-    sections.forEach(sec => {
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-list li a');
+    const header = document.querySelector("navbar");
+
+    window.onscroll = () => {
         let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let inset=sec.offsetWidth-150;
-        let width = sec.offsetWidth;
-        if (width > inset) {
-            sec.style.width = "100%";
+
+        // Sticky Navbar Toggle
+        if (header) {
+            header.classList.toggle('sticky', top > 50);
         }
-        if (width < inset) {
-            sec.style.width = "90%";
-        }
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-        if(top >= offset && top < offset + height){
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav ul li a[href*=' + id + ']').classList.add('active');
-            });
-        };
-    });
-    let header = document.querySelector("header");
-    header.classList.toggle('sticky',window.scrollY>100);
- }
+
+        // Active Navigation Highlight Loop
+        sections.forEach(sec => {
+            let offset = sec.offsetTop - 160;
+            let height = sec.offsetHeight;
+            let id = sec.getAttribute('id');
+
+            if (top >= offset && top < offset + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                const activeTarget = document.querySelector(`.nav-list li a[href*="${id}"]`);
+                if (activeTarget) {
+                    activeTarget.classList.add('active');
+                }
+            }
+        });
+    };
+});
